@@ -51,17 +51,17 @@ const SubjectSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="h-auto p-2 hover:bg-purple-50">
+        <Button variant="ghost" className="h-auto p-2 hover:bg-cyan-50 border border-cyan-200">
           <div className="flex items-center space-x-2">
             <CurrentIcon className={`h-4 w-4 ${currentColor}`} />
-            <span className="text-sm font-medium text-purple-800 max-w-32 truncate">
+            <span className="text-sm font-medium text-slate-700 max-w-32 truncate">
               {subjectName}
             </span>
-            <ChevronDown className="h-3 w-3 text-purple-600" />
+            <ChevronDown className="h-3 w-3 text-cyan-600" />
           </div>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="w-56">
+      <DropdownMenuContent align="start" className="w-56 bg-white border-cyan-200">
         {subjects.map((subject) => {
           const Icon = subjectIcons[subject.id];
           const color = subjectColors[subject.id];
@@ -71,7 +71,7 @@ const SubjectSwitcher = () => {
             <DropdownMenuItem
               key={subject.id}
               onClick={() => handleSubjectChange(subject.id)}
-              className={`flex items-center space-x-2 ${isActive ? 'bg-purple-50' : ''}`}
+              className={`flex items-center space-x-2 ${isActive ? 'bg-cyan-50' : ''}`}
             >
               <Icon className={`h-4 w-4 ${color}`} />
               <span className={isActive ? 'font-medium' : ''}>{subject.name}</span>

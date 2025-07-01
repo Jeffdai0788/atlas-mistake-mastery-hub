@@ -51,14 +51,21 @@ const SubjectSelection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-cyan-800 to-slate-900 p-4">
       <div className="max-w-md mx-auto pt-12 space-y-8">
-        {/* Header */}
+        {/* Header with EdAtlas logo */}
         <div className="text-center space-y-4 animate-fade-in">
+          <div className="mx-auto mb-4">
+            <img 
+              src="/lovable-uploads/4d3afe5c-a6ef-4c95-ad71-76913c3bdba8.png" 
+              alt="EdAtlas Logo" 
+              className="h-16 w-auto mx-auto drop-shadow-xl"
+            />
+          </div>
           <h1 className="text-3xl font-bold text-white">
             Choose Your Subject
           </h1>
-          <p className="text-purple-200">
+          <p className="text-cyan-200">
             Select the VCE subject you'd like to review
           </p>
         </div>
@@ -75,7 +82,7 @@ const SubjectSelection = () => {
                 className={`
                   cursor-pointer transition-all duration-300 border-0 overflow-hidden
                   ${isSelected 
-                    ? 'scale-105 shadow-2xl shadow-purple-500/25' 
+                    ? 'scale-105 shadow-2xl shadow-cyan-500/25' 
                     : 'hover:scale-102 shadow-lg hover:shadow-xl'
                   }
                 `}
@@ -121,7 +128,7 @@ const SubjectSelection = () => {
 
         {/* Footer */}
         <div className="text-center pt-8">
-          <p className="text-purple-300 text-sm">
+          <p className="text-cyan-300 text-sm">
             You can switch subjects anytime from the dashboard
           </p>
         </div>
