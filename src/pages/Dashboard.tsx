@@ -4,10 +4,20 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpen, Calendar, Camera, TrendingUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useSubject } from '@/contexts/SubjectContext';
+import SubjectSwitcher from '@/components/SubjectSwitcher';
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const { currentSubject, subjectName } = useSubject();
   
+  // Redirect to welcome if no subject selected
+  React.useEffect(() => {
+    if (!currentSubject) {
+      navigate('/');
+    }
+  }, [currentSubject, navigate]);
+
   const motivationalQuotes = [
     "Excellence is not a skill, it's an attitude.",
     "Every mistake is a stepping stone to mastery.",
@@ -17,6 +27,10 @@ const Dashboard = () => {
   ];
   
   const todaysQuote = motivationalQuotes[new Date().getDay() % motivationalQuotes.length];
+
+  if (!currentSubject) {
+    return null; // Will redirect to welcome
+  }
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 p-4">
@@ -24,7 +38,8 @@ const Dashboard = () => {
         {/* Header */}
         <div className="text-center pt-8 pb-4">
           <h1 className="text-3xl font-bold text-purple-800 mb-2">EdAtlas</h1>
-          <p className="text-purple-600 text-sm">Elite VCE Tutoring</p>
+          <p className="text-purple-600 text-sm mb-4">Elite VCE Tutoring</p>
+          <SubjectSwitcher />
         </div>
 
         {/* Motivational Quote */}
@@ -39,7 +54,7 @@ const Dashboard = () => {
           <CardHeader>
             <CardTitle className="text-purple-800 flex items-center gap-2">
               <TrendingUp className="h-5 w-5" />
-              Your Progress
+              Your Progress - {subjectName}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
