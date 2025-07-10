@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, FileText, Plus } from 'lucide-react';
+import { SquareChevronDown, RectangleHorizontal, SquarePlus } from 'lucide-react';
 import { useSubject } from '@/contexts/SubjectContext';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -36,11 +36,11 @@ const SubjectSwitcher = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="h-auto p-2 hover:bg-cyan-50 border border-cyan-200">
           <div className="flex items-center space-x-2">
-            <FileText className="h-4 w-4 text-cyan-600" />
+            <RectangleHorizontal className="h-4 w-4 text-cyan-600" />
             <span className="text-sm font-medium text-slate-700 max-w-32 truncate">
               {subjectName}
             </span>
-            <ChevronDown className="h-3 w-3 text-cyan-600" />
+            <SquareChevronDown className="h-3 w-3 text-cyan-600" />
           </div>
         </Button>
       </DropdownMenuTrigger>
@@ -54,7 +54,7 @@ const SubjectSwitcher = () => {
               onClick={() => handleSubjectChange(subject.id)}
               className={`flex items-center space-x-2 ${isActive ? 'bg-cyan-50' : ''}`}
             >
-              <FileText className="h-4 w-4 text-cyan-600" />
+              <RectangleHorizontal className="h-4 w-4 text-cyan-600" />
               <span className={isActive ? 'font-medium' : ''}>{subject.name}</span>
             </DropdownMenuItem>
           );
@@ -66,7 +66,7 @@ const SubjectSwitcher = () => {
           onClick={handleAddSubject}
           className="flex items-center space-x-2 text-cyan-600"
         >
-          <Plus className="h-4 w-4" />
+          <SquarePlus className="h-4 w-4" />
           <span>Add New Subject</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
