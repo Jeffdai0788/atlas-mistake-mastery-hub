@@ -52,9 +52,9 @@ const Calendar = () => {
     
     const total = data.problems + data.reviews;
     if (total === 0) return 'bg-gray-100';
-    if (total <= 2) return 'bg-purple-200';
-    if (total <= 4) return 'bg-purple-400';
-    return 'bg-purple-600';
+    if (total <= 2) return 'bg-blue-200';
+    if (total <= 4) return 'bg-blue-400';
+    return 'bg-blue-600';
   };
 
   const days = getDaysInMonth(selectedDate);
@@ -64,7 +64,7 @@ const Calendar = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="max-w-md mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center gap-4 pt-8 pb-4">
@@ -72,20 +72,20 @@ const Calendar = () => {
             variant="ghost" 
             size="sm"
             onClick={() => navigate('/dashboard')}
-            className="text-purple-600"
+            className="text-blue-600"
           >
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <div>
-            <h1 className="text-2xl font-bold text-purple-800">Study Calendar</h1>
-            <p className="text-purple-600 text-sm">Track your learning journey</p>
+            <h1 className="text-2xl font-bold text-blue-800">Study Calendar</h1>
+            <p className="text-blue-600 text-sm">Track your learning journey</p>
           </div>
         </div>
 
         {/* Calendar */}
         <Card className="shadow-lg border-0">
           <CardHeader>
-            <CardTitle className="text-purple-800 flex items-center gap-2">
+            <CardTitle className="text-blue-800 flex items-center gap-2">
               <CalendarIcon className="h-5 w-5" />
               {monthNames[selectedDate.getMonth()]} {selectedDate.getFullYear()}
             </CardTitle>
@@ -93,7 +93,7 @@ const Calendar = () => {
           <CardContent>
             <div className="grid grid-cols-7 gap-1 mb-4">
               {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day) => (
-                <div key={day} className="text-center text-sm font-medium text-purple-600 p-2">
+                <div key={day} className="text-center text-sm font-medium text-blue-600 p-2">
                   {day}
                 </div>
               ))}
@@ -107,7 +107,7 @@ const Calendar = () => {
                     aspect-square flex items-center justify-center text-sm
                     ${day ? getActivityLevel(day) : ''}
                     ${day ? 'cursor-pointer hover:scale-105 transition-transform' : ''}
-                    ${day && getActivityLevel(day).includes('purple-600') ? 'text-white' : 'text-purple-800'}
+                    ${day && getActivityLevel(day).includes('blue-600') ? 'text-white' : 'text-blue-800'}
                   `}
                 >
                   {day}
@@ -116,13 +116,13 @@ const Calendar = () => {
             </div>
 
             {/* Legend */}
-            <div className="mt-4 flex items-center justify-center gap-2 text-xs text-purple-600">
+            <div className="mt-4 flex items-center justify-center gap-2 text-xs text-blue-600">
               <span>Less</span>
               <div className="flex gap-1">
                 <div className="w-3 h-3 bg-gray-100"></div>
-                <div className="w-3 h-3 bg-purple-200"></div>
-                <div className="w-3 h-3 bg-purple-400"></div>
-                <div className="w-3 h-3 bg-purple-600"></div>
+                <div className="w-3 h-3 bg-blue-200"></div>
+                <div className="w-3 h-3 bg-blue-400"></div>
+                <div className="w-3 h-3 bg-blue-600"></div>
               </div>
               <span>More</span>
             </div>
@@ -132,26 +132,26 @@ const Calendar = () => {
         {/* Statistics */}
         <Card className="shadow-lg border-0">
           <CardHeader>
-            <CardTitle className="text-purple-800 flex items-center gap-2">
+            <CardTitle className="text-blue-800 flex items-center gap-2">
               <TrendingUp className="h-5 w-5" />
               This Month
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-4">
-              <div className="text-center p-4 bg-purple-50">
-                <div className="text-2xl font-bold text-purple-700">9</div>
-                <div className="text-sm text-purple-600">Problems Added</div>
+              <div className="text-center p-4 bg-blue-50">
+                <div className="text-2xl font-bold text-blue-700">9</div>
+                <div className="text-sm text-blue-600">Problems Added</div>
               </div>
-              <div className="text-center p-4 bg-indigo-50">
-                <div className="text-2xl font-bold text-indigo-700">12</div>
-                <div className="text-sm text-indigo-600">Reviews Done</div>
+              <div className="text-center p-4 bg-blue-50">
+                <div className="text-2xl font-bold text-blue-700">12</div>
+                <div className="text-sm text-blue-600">Reviews Done</div>
               </div>
             </div>
             
-            <div className="mt-4 text-center p-4 bg-green-50">
-              <div className="text-2xl font-bold text-green-700">85%</div>
-              <div className="text-sm text-green-600">Success Rate</div>
+            <div className="mt-4 text-center p-4 bg-blue-50">
+              <div className="text-2xl font-bold text-blue-700">85%</div>
+              <div className="text-sm text-blue-600">Success Rate</div>
             </div>
           </CardContent>
         </Card>
@@ -159,7 +159,7 @@ const Calendar = () => {
         {/* Upcoming Reviews */}
         <Card className="shadow-lg border-0">
           <CardHeader>
-            <CardTitle className="text-purple-800">Upcoming Reviews</CardTitle>
+            <CardTitle className="text-blue-800">Upcoming Reviews</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
