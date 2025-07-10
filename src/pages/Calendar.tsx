@@ -104,7 +104,7 @@ const Calendar = () => {
                 <div
                   key={index}
                   className={`
-                    aspect-square flex items-center justify-center text-sm rounded-lg
+                    aspect-square flex items-center justify-center text-sm
                     ${day ? getActivityLevel(day) : ''}
                     ${day ? 'cursor-pointer hover:scale-105 transition-transform' : ''}
                     ${day && getActivityLevel(day).includes('purple-600') ? 'text-white' : 'text-purple-800'}
@@ -119,10 +119,10 @@ const Calendar = () => {
             <div className="mt-4 flex items-center justify-center gap-2 text-xs text-purple-600">
               <span>Less</span>
               <div className="flex gap-1">
-                <div className="w-3 h-3 bg-gray-100 rounded"></div>
-                <div className="w-3 h-3 bg-purple-200 rounded"></div>
-                <div className="w-3 h-3 bg-purple-400 rounded"></div>
-                <div className="w-3 h-3 bg-purple-600 rounded"></div>
+                <div className="w-3 h-3 bg-gray-100"></div>
+                <div className="w-3 h-3 bg-purple-200"></div>
+                <div className="w-3 h-3 bg-purple-400"></div>
+                <div className="w-3 h-3 bg-purple-600"></div>
               </div>
               <span>More</span>
             </div>
@@ -139,17 +139,17 @@ const Calendar = () => {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-4">
-              <div className="text-center p-4 bg-purple-50 rounded-lg">
+              <div className="text-center p-4 bg-purple-50">
                 <div className="text-2xl font-bold text-purple-700">9</div>
                 <div className="text-sm text-purple-600">Problems Added</div>
               </div>
-              <div className="text-center p-4 bg-indigo-50 rounded-lg">
+              <div className="text-center p-4 bg-indigo-50">
                 <div className="text-2xl font-bold text-indigo-700">12</div>
                 <div className="text-sm text-indigo-600">Reviews Done</div>
               </div>
             </div>
             
-            <div className="mt-4 text-center p-4 bg-green-50 rounded-lg">
+            <div className="mt-4 text-center p-4 bg-green-50">
               <div className="text-2xl font-bold text-green-700">85%</div>
               <div className="text-sm text-green-600">Success Rate</div>
             </div>
@@ -163,20 +163,20 @@ const Calendar = () => {
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              <div className="flex justify-between items-center p-3 bg-yellow-50 rounded-lg">
+              <div className="flex justify-between items-center p-3 bg-yellow-50">
                 <div>
                   <div className="font-medium text-yellow-800">Tomorrow</div>
                   <div className="text-sm text-yellow-600">2 problems due</div>
                 </div>
-                <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-yellow-500"></div>
               </div>
               
-              <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg">
+              <div className="flex justify-between items-center p-3 bg-orange-50">
                 <div>
                   <div className="font-medium text-orange-800">In 3 days</div>
                   <div className="text-sm text-orange-600">1 problem due</div>
                 </div>
-                <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-orange-500"></div>
               </div>
             </div>
           </CardContent>

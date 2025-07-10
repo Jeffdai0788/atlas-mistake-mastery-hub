@@ -119,7 +119,7 @@ const Logbook = () => {
                     <img 
                       src={problemImage} 
                       alt="Problem" 
-                      className="w-full h-32 object-cover rounded-lg"
+                      className="w-full h-32 object-cover"
                     />
                     <Button
                       size="sm"
@@ -151,7 +151,7 @@ const Logbook = () => {
                     <img 
                       src={solutionImage} 
                       alt="Solution" 
-                      className="w-full h-32 object-cover rounded-lg"
+                      className="w-full h-32 object-cover"
                     />
                     <Button
                       size="sm"
