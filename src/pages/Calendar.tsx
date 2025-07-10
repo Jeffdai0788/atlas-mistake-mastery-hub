@@ -64,7 +64,7 @@ const Calendar = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-primary/10 p-4">
       <div className="max-w-md mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center gap-4 pt-8 pb-4">
@@ -72,20 +72,20 @@ const Calendar = () => {
             variant="ghost" 
             size="sm"
             onClick={() => navigate('/dashboard')}
-            className="text-blue-600"
+            className="text-primary"
           >
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <div>
-            <h1 className="text-2xl font-bold text-blue-800">Study Calendar</h1>
-            <p className="text-blue-600 text-sm">Track your learning journey</p>
+            <h1 className="text-2xl font-bold text-primary">Study Calendar</h1>
+            <p className="text-primary/70 text-sm">Track your learning journey</p>
           </div>
         </div>
 
         {/* Calendar */}
         <Card className="shadow-lg border-0">
           <CardHeader>
-            <CardTitle className="text-blue-800 flex items-center gap-2">
+            <CardTitle className="text-primary flex items-center gap-2">
               <CalendarIcon className="h-5 w-5" />
               {monthNames[selectedDate.getMonth()]} {selectedDate.getFullYear()}
             </CardTitle>
@@ -93,7 +93,7 @@ const Calendar = () => {
           <CardContent>
             <div className="grid grid-cols-7 gap-1 mb-4">
               {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day) => (
-                <div key={day} className="text-center text-sm font-medium text-blue-600 p-2">
+                <div key={day} className="text-center text-sm font-medium text-primary p-2">
                   {day}
                 </div>
               ))}
@@ -107,7 +107,7 @@ const Calendar = () => {
                     aspect-square flex items-center justify-center text-sm
                     ${day ? getActivityLevel(day) : ''}
                     ${day ? 'cursor-pointer hover:scale-105 transition-transform' : ''}
-                    ${day && getActivityLevel(day).includes('blue-600') ? 'text-white' : 'text-blue-800'}
+                    ${day && getActivityLevel(day).includes('blue-600') ? 'text-white' : 'text-primary'}
                   `}
                 >
                   {day}
@@ -116,7 +116,7 @@ const Calendar = () => {
             </div>
 
             {/* Legend */}
-            <div className="mt-4 flex items-center justify-center gap-2 text-xs text-blue-600">
+            <div className="mt-4 flex items-center justify-center gap-2 text-xs text-primary/70">
               <span>Less</span>
               <div className="flex gap-1">
                 <div className="w-3 h-3 bg-gray-100"></div>
@@ -132,26 +132,26 @@ const Calendar = () => {
         {/* Statistics */}
         <Card className="shadow-lg border-0">
           <CardHeader>
-            <CardTitle className="text-blue-800 flex items-center gap-2">
+            <CardTitle className="text-primary flex items-center gap-2">
               <TrendingUp className="h-5 w-5" />
               This Month
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-4">
-              <div className="text-center p-4 bg-blue-50">
-                <div className="text-2xl font-bold text-blue-700">9</div>
-                <div className="text-sm text-blue-600">Problems Added</div>
+              <div className="text-center p-4 bg-primary/5">
+                <div className="text-2xl font-bold text-primary">9</div>
+                <div className="text-sm text-primary/70">Problems Added</div>
               </div>
-              <div className="text-center p-4 bg-blue-50">
-                <div className="text-2xl font-bold text-blue-700">12</div>
-                <div className="text-sm text-blue-600">Reviews Done</div>
+              <div className="text-center p-4 bg-primary/5">
+                <div className="text-2xl font-bold text-primary">12</div>
+                <div className="text-sm text-primary/70">Reviews Done</div>
               </div>
             </div>
             
-            <div className="mt-4 text-center p-4 bg-blue-50">
-              <div className="text-2xl font-bold text-blue-700">85%</div>
-              <div className="text-sm text-blue-600">Success Rate</div>
+            <div className="mt-4 text-center p-4 bg-primary/5">
+              <div className="text-2xl font-bold text-primary">85%</div>
+              <div className="text-sm text-primary/70">Success Rate</div>
             </div>
           </CardContent>
         </Card>
@@ -159,7 +159,7 @@ const Calendar = () => {
         {/* Upcoming Reviews */}
         <Card className="shadow-lg border-0">
           <CardHeader>
-            <CardTitle className="text-blue-800">Upcoming Reviews</CardTitle>
+            <CardTitle className="text-primary">Upcoming Reviews</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
