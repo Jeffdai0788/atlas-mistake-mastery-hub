@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Calculator, Atom, Zap, Beaker } from 'lucide-react';
+import { ChevronDown, BookOpen, Plus } from 'lucide-react';
 import { useSubject } from '@/contexts/SubjectContext';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -9,51 +9,34 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 
-const subjectIcons: Record<string, any> = {
-  'specialist-mathematics': Calculator,
-  'mathematical-methods': Atom,
-  'physics': Zap,
-  'chemistry': Beaker
-};
-
-const subjectColors: Record<string, string> = {
-  'specialist-mathematics': 'text-blue-600',
-  'mathematical-methods': 'text-purple-600',
-  'physics': 'text-orange-600',
-  'chemistry': 'text-green-600'
-};
-
 const SubjectSwitcher = () => {
-  const { currentSubject, setCurrentSubject, subjectName } = useSubject();
+  const { currentSubject, setCurrentSubject, subjectName, getUserSubjects } = useSubject();
   const navigate = useNavigate();
 
-  const subjects = [
-    { id: 'specialist-mathematics', name: 'Specialist Mathematics' },
-    { id: 'mathematical-methods', name: 'Mathematical Methods' },
-    { id: 'physics', name: 'Physics' },
-    { id: 'chemistry', name: 'Chemistry' }
-  ];
+  const userSubjects = getUserSubjects();
 
   const handleSubjectChange = (subjectId: string) => {
     setCurrentSubject(subjectId);
     navigate('/dashboard');
   };
 
+  const handleAddSubject = () => {
+    navigate('/subject-selection');
+  };
+
   if (!currentSubject) {
     return null;
   }
-
-  const CurrentIcon = subjectIcons[currentSubject];
-  const currentColor = subjectColors[currentSubject];
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="h-auto p-2 hover:bg-cyan-50 border border-cyan-200">
           <div className="flex items-center space-x-2">
-            <CurrentIcon className={`h-4 w-4 ${currentColor}`} />
+            <BookOpen className="h-4 w-4 text-cyan-600" />
             <span className="text-sm font-medium text-slate-700 max-w-32 truncate">
               {subjectName}
             </span>
@@ -62,9 +45,7 @@ const SubjectSwitcher = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-56 bg-white border-cyan-200">
-        {subjects.map((subject) => {
-          const Icon = subjectIcons[subject.id];
-          const color = subjectColors[subject.id];
+        {userSubjects.map((subject) => {
           const isActive = subject.id === currentSubject;
           
           return (
@@ -73,11 +54,21 @@ const SubjectSwitcher = () => {
               onClick={() => handleSubjectChange(subject.id)}
               className={`flex items-center space-x-2 ${isActive ? 'bg-cyan-50' : ''}`}
             >
-              <Icon className={`h-4 w-4 ${color}`} />
+              <BookOpen className="h-4 w-4 text-cyan-600" />
               <span className={isActive ? 'font-medium' : ''}>{subject.name}</span>
             </DropdownMenuItem>
           );
         })}
+        
+        {userSubjects.length > 0 && <DropdownMenuSeparator />}
+        
+        <DropdownMenuItem
+          onClick={handleAddSubject}
+          className="flex items-center space-x-2 text-cyan-600"
+        >
+          <Plus className="h-4 w-4" />
+          <span>Add New Subject</span>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
