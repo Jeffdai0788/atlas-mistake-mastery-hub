@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Welcome = () => {
@@ -70,7 +70,7 @@ const Welcome = () => {
               className="group bg-gradient-to-r from-cyan-500 to-slate-600 hover:from-cyan-600 hover:to-slate-700 text-white border-0 h-14 px-8 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/25"
             >
               <span className="text-lg font-medium mr-2">Get Started</span>
-              <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
         </div>

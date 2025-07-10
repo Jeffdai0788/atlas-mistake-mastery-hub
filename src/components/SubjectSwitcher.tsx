@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, BookOpen, Plus } from 'lucide-react';
+import { ChevronDown, FileText, Plus } from 'lucide-react';
 import { useSubject } from '@/contexts/SubjectContext';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -36,7 +36,7 @@ const SubjectSwitcher = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="h-auto p-2 hover:bg-cyan-50 border border-cyan-200">
           <div className="flex items-center space-x-2">
-            <BookOpen className="h-4 w-4 text-cyan-600" />
+            <FileText className="h-4 w-4 text-cyan-600" />
             <span className="text-sm font-medium text-slate-700 max-w-32 truncate">
               {subjectName}
             </span>
@@ -54,7 +54,7 @@ const SubjectSwitcher = () => {
               onClick={() => handleSubjectChange(subject.id)}
               className={`flex items-center space-x-2 ${isActive ? 'bg-cyan-50' : ''}`}
             >
-              <BookOpen className="h-4 w-4 text-cyan-600" />
+              <FileText className="h-4 w-4 text-cyan-600" />
               <span className={isActive ? 'font-medium' : ''}>{subject.name}</span>
             </DropdownMenuItem>
           );

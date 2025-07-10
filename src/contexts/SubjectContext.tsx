@@ -113,7 +113,7 @@ export const SubjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
 export const useSubject = () => {
   const context = useContext(SubjectContext);
   if (context === undefined) {
-    throw new error('useSubject must be used within a SubjectProvider');
+    throw new Error('useSubject must be used within a SubjectProvider');
   }
   return context;
 };

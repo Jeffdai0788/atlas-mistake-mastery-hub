@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, Calendar, Camera, TrendingUp, Activity } from 'lucide-react';
+import { FileText, Calendar, Square, BarChart3, Activity } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useSubject } from '@/contexts/SubjectContext';
 import SubjectSwitcher from '@/components/SubjectSwitcher';
@@ -100,7 +100,7 @@ const Dashboard = () => {
         <Card className="shadow-lg border-0">
           <CardHeader>
             <CardTitle className="text-slate-700 flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-cyan-600" />
+              <BarChart3 className="h-5 w-5 text-cyan-600" />
               Your Progress - {subjectName}
             </CardTitle>
           </CardHeader>
@@ -130,7 +130,7 @@ const Dashboard = () => {
             onClick={() => navigate('/logbook')}
             className="w-full h-16 bg-gradient-to-r from-cyan-600 to-slate-600 hover:from-cyan-700 hover:to-slate-700 text-white shadow-lg transition-all duration-200 hover:scale-105"
           >
-            <Camera className="h-6 w-6 mr-3" />
+            <Square className="h-6 w-6 mr-3" />
             <div className="text-left">
               <div className="font-semibold">Add New Problem</div>
               <div className="text-sm opacity-90">Log a mistake to learn from</div>
@@ -142,7 +142,7 @@ const Dashboard = () => {
             variant="outline"
             className="w-full h-16 border-2 border-cyan-200 hover:bg-cyan-50 transition-all duration-200 hover:scale-105"
           >
-            <BookOpen className="h-6 w-6 mr-3 text-cyan-600" />
+            <FileText className="h-6 w-6 mr-3 text-cyan-600" />
             <div className="text-left">
               <div className="font-semibold text-slate-700">Review Due</div>
               <div className="text-sm text-slate-600">3 problems waiting</div>
