@@ -69,14 +69,14 @@ const Dashboard = () => {
         </div>
 
         {/* Motivational Quote */}
-        <Card className="bg-gradient-to-r from-cyan-600 to-slate-700 text-white border-0 shadow-lg">
+        <Card className="bg-gradient-to-r from-cyan-600 to-slate-700 text-white border-0 shadow-lg rounded-none">
           <CardContent className="p-6 text-center">
             <p className="text-lg font-medium italic">"{todaysQuote}"</p>
           </CardContent>
         </Card>
 
         {/* Activity Frequency Graph */}
-        <Card className="shadow-lg border-0">
+        <Card className="shadow-lg border-0 rounded-none">
           <CardHeader>
             <CardTitle className="text-slate-700 flex items-center gap-2">
               <Grid2x2 className="h-5 w-5 text-cyan-600" />
@@ -97,7 +97,7 @@ const Dashboard = () => {
         </Card>
 
         {/* Progress Overview */}
-        <Card className="shadow-lg border-0">
+        <Card className="shadow-lg border-0 rounded-none">
           <CardHeader>
             <CardTitle className="text-slate-700 flex items-center gap-2">
               <BarChart2 className="h-5 w-5 text-cyan-600" />
@@ -106,16 +106,16 @@ const Dashboard = () => {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
-              <div className="text-center p-4 bg-cyan-50 rounded-lg border border-cyan-100">
+              <div className="text-center p-4 bg-cyan-50 border border-cyan-100 rounded-none">
                 <div className="text-2xl font-bold text-cyan-700">24</div>
                 <div className="text-sm text-cyan-600">Problems Logged</div>
               </div>
-              <div className="text-center p-4 bg-slate-50 rounded-lg border border-slate-200">
+              <div className="text-center p-4 bg-slate-50 border border-slate-200 rounded-none">
                 <div className="text-2xl font-bold text-slate-700">18</div>
                 <div className="text-sm text-slate-600">Problems Mastered</div>
               </div>
             </div>
-            <div className="text-center p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+            <div className="text-center p-4 bg-emerald-50 border border-emerald-100 rounded-none">
               <div className="text-2xl font-bold text-emerald-700">7</div>
               <div className="text-sm text-emerald-600">Day Streak</div>
             </div>
@@ -128,7 +128,7 @@ const Dashboard = () => {
           
           <Button 
             onClick={() => navigate('/logbook')}
-            className="w-full h-16 bg-gradient-to-r from-cyan-600 to-slate-600 hover:from-cyan-700 hover:to-slate-700 text-white shadow-lg transition-all duration-200 hover:scale-105"
+            className="w-full h-16 bg-gradient-to-r from-cyan-600 to-slate-600 hover:from-cyan-700 hover:to-slate-700 text-white shadow-lg transition-all duration-200 hover:scale-105 rounded-none"
           >
             <SquarePlus className="h-6 w-6 mr-3" />
             <div className="text-left">
@@ -140,7 +140,7 @@ const Dashboard = () => {
           <Button 
             onClick={() => navigate('/review')}
             variant="outline"
-            className="w-full h-16 border-2 border-cyan-200 hover:bg-cyan-50 transition-all duration-200 hover:scale-105"
+            className="w-full h-16 border-2 border-cyan-200 hover:bg-cyan-50 transition-all duration-200 hover:scale-105 rounded-none"
           >
             <RectangleHorizontal className="h-6 w-6 mr-3 text-cyan-600" />
             <div className="text-left">
@@ -152,7 +152,7 @@ const Dashboard = () => {
           <Button 
             onClick={() => navigate('/calendar')}
             variant="outline"
-            className="w-full h-16 border-2 border-cyan-200 hover:bg-cyan-50 transition-all duration-200 hover:scale-105"
+            className="w-full h-16 border-2 border-cyan-200 hover:bg-cyan-50 transition-all duration-200 hover:scale-105 rounded-none"
           >
             <Grid3x3 className="h-6 w-6 mr-3 text-cyan-600" />
             <div className="text-left">
