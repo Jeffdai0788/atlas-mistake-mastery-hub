@@ -61,59 +61,59 @@ const Logbook = () => {
             variant="ghost" 
             size="sm"
             onClick={() => navigate('/dashboard')}
-            className="text-blue-600"
+            className="text-cyan-600"
           >
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <div>
-            <h1 className="text-2xl font-bold text-blue-800">Mistake Logbook</h1>
-            <p className="text-blue-600 text-sm">Learn from every mistake</p>
+            <h1 className="text-2xl font-bold text-cyan-800">Mistake Logbook</h1>
+            <p className="text-cyan-600 text-sm">Learn from every mistake</p>
           </div>
         </div>
 
         {/* Form */}
         <Card className="shadow-lg border-0">
           <CardHeader>
-            <CardTitle className="text-blue-800">New Problem Entry</CardTitle>
+            <CardTitle className="text-cyan-800">New Problem Entry</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="subject" className="text-blue-700">Subject *</Label>
+              <Label htmlFor="subject" className="text-cyan-700">Subject *</Label>
               <Input
                 id="subject"
                 placeholder="e.g., Mathematics, Physics, Chemistry"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="border-blue-200 focus:border-blue-400"
+                className="border-cyan-200 focus:border-cyan-400"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="topic" className="text-blue-700">Topic *</Label>
+              <Label htmlFor="topic" className="text-cyan-700">Topic *</Label>
               <Input
                 id="topic"
                 placeholder="e.g., Quadratic Functions, Kinematics"
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
-                className="border-blue-200 focus:border-blue-400"
+                className="border-cyan-200 focus:border-cyan-400"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="description" className="text-blue-700">What went wrong? *</Label>
+              <Label htmlFor="description" className="text-cyan-700">What went wrong? *</Label>
               <Textarea
                 id="description"
                 placeholder="Describe your mistake and what you learned..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="border-blue-200 focus:border-blue-400 min-h-24"
+                className="border-cyan-200 focus:border-cyan-400 min-h-24"
               />
             </div>
 
             {/* Image Upload Sections */}
             <div className="space-y-4">
               <div className="space-y-3">
-                <Label className="text-blue-700">Problem Image</Label>
+                <Label className="text-cyan-700">Problem Image</Label>
                 {problemImage ? (
                   <div className="relative">
                     <img 
@@ -134,18 +134,18 @@ const Logbook = () => {
                   <Button
                     variant="outline"
                     onClick={() => handleImageUpload('problem')}
-                    className="w-full h-24 border-2 border-dashed border-blue-300 hover:border-blue-400 hover:bg-blue-50"
+                    className="w-full h-24 border-2 border-dashed border-cyan-300 hover:border-cyan-400 hover:bg-cyan-50"
                   >
                     <div className="text-center">
-                      <Camera className="h-8 w-8 mx-auto mb-2 text-blue-500" />
-                      <span className="text-blue-600">Capture Problem</span>
+                      <Camera className="h-8 w-8 mx-auto mb-2 text-cyan-500" />
+                      <span className="text-cyan-600">Capture Problem</span>
                     </div>
                   </Button>
                 )}
               </div>
 
               <div className="space-y-3">
-                <Label className="text-blue-700">Solution Image</Label>
+                <Label className="text-cyan-700">Solution Image</Label>
                 {solutionImage ? (
                   <div className="relative">
                     <img 
@@ -166,11 +166,11 @@ const Logbook = () => {
                   <Button
                     variant="outline"
                     onClick={() => handleImageUpload('solution')}
-                    className="w-full h-24 border-2 border-dashed border-blue-300 hover:border-blue-400 hover:bg-blue-50"
+                    className="w-full h-24 border-2 border-dashed border-cyan-300 hover:border-cyan-400 hover:bg-cyan-50"
                   >
                     <div className="text-center">
-                      <Upload className="h-8 w-8 mx-auto mb-2 text-blue-500" />
-                      <span className="text-blue-600">Add Solution</span>
+                      <Upload className="h-8 w-8 mx-auto mb-2 text-cyan-500" />
+                      <span className="text-cyan-600">Add Solution</span>
                     </div>
                   </Button>
                 )}
@@ -179,7 +179,7 @@ const Logbook = () => {
 
             <Button
               onClick={handleSave}
-              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg h-12"
+              className="w-full bg-gradient-to-r from-cyan-600 to-slate-600 hover:from-cyan-700 hover:to-slate-700 text-white shadow-lg h-12"
             >
               <Check className="h-5 w-5 mr-2" />
               Save Problem

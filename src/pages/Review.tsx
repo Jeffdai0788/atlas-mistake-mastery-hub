@@ -70,7 +70,7 @@ const Review = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen bg-background p-4">
       <div className="max-w-md mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center gap-4 pt-8 pb-4">
@@ -78,22 +78,22 @@ const Review = () => {
             variant="ghost" 
             size="sm"
             onClick={() => navigate('/dashboard')}
-            className="text-blue-600"
+            className="text-cyan-600"
           >
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <div>
-            <h1 className="text-2xl font-bold text-blue-800">Review Session</h1>
-            <p className="text-blue-600 text-sm">
+            <h1 className="text-2xl font-bold text-cyan-800">Review Session</h1>
+            <p className="text-cyan-600 text-sm">
               Problem {currentProblem + 1} of {problems.length}
             </p>
           </div>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full bg-blue-200 h-2">
+        <div className="w-full bg-cyan-200 h-2">
           <div 
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 h-2 transition-all duration-300"
+            className="bg-gradient-to-r from-cyan-600 to-slate-600 h-2 transition-all duration-300"
             style={{ width: `${((currentProblem + 1) / problems.length) * 100}%` }}
           ></div>
         </div>
@@ -103,8 +103,8 @@ const Review = () => {
           <CardHeader>
             <div className="flex justify-between items-start">
               <div>
-                <CardTitle className="text-blue-800">{problem.subject}</CardTitle>
-                <p className="text-blue-600 text-sm">{problem.topic}</p>
+                <CardTitle className="text-cyan-800">{problem.subject}</CardTitle>
+                <p className="text-cyan-600 text-sm">{problem.topic}</p>
               </div>
               <span className={`px-2 py-1 text-xs font-medium ${difficultyColors[problem.difficulty as keyof typeof difficultyColors]}`}>
                 {problem.difficulty}
@@ -112,12 +112,12 @@ const Review = () => {
             </div>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="bg-blue-50 p-4">
-              <h3 className="font-medium text-blue-800 mb-2">What you learned:</h3>
-              <p className="text-blue-700">{problem.description}</p>
+            <div className="bg-cyan-50 p-4">
+              <h3 className="font-medium text-cyan-800 mb-2">What you learned:</h3>
+              <p className="text-cyan-700">{problem.description}</p>
             </div>
 
-            <div className="flex justify-between text-sm text-blue-600">
+            <div className="flex justify-between text-sm text-cyan-600">
               <span>Added: {problem.addedDate}</span>
               <span>Reviews: {problem.reviewCount}</span>
             </div>
@@ -136,7 +136,7 @@ const Review = () => {
 
         {/* Response Buttons */}
         <div className="space-y-3">
-          <h3 className="text-lg font-semibold text-blue-800 text-center">
+          <h3 className="text-lg font-semibold text-cyan-800 text-center">
             Do you understand this problem now?
           </h3>
           

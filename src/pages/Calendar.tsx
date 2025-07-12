@@ -52,9 +52,9 @@ const Calendar = () => {
     
     const total = data.problems + data.reviews;
     if (total === 0) return 'bg-gray-100';
-    if (total <= 2) return 'bg-blue-200';
-    if (total <= 4) return 'bg-blue-400';
-    return 'bg-blue-600';
+    if (total <= 2) return 'bg-cyan-200';
+    if (total <= 4) return 'bg-cyan-400';
+    return 'bg-cyan-600';
   };
 
   const days = getDaysInMonth(selectedDate);
@@ -120,9 +120,9 @@ const Calendar = () => {
               <span>Less</span>
               <div className="flex gap-1">
                 <div className="w-3 h-3 bg-gray-100"></div>
-                <div className="w-3 h-3 bg-blue-200"></div>
-                <div className="w-3 h-3 bg-blue-400"></div>
-                <div className="w-3 h-3 bg-blue-600"></div>
+                <div className="w-3 h-3 bg-cyan-200"></div>
+                <div className="w-3 h-3 bg-cyan-400"></div>
+                <div className="w-3 h-3 bg-cyan-600"></div>
               </div>
               <span>More</span>
             </div>
