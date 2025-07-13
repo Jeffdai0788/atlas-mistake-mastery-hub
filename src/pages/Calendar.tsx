@@ -9,15 +9,8 @@ const Calendar = () => {
   const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState(new Date());
 
-  // Mock data for calendar
-  const studyData = {
-    '2024-06-20': { problems: 2, reviews: 1 },
-    '2024-06-21': { problems: 1, reviews: 3 }, 
-    '2024-06-22': { problems: 3, reviews: 2 },
-    '2024-06-23': { problems: 0, reviews: 1 },
-    '2024-06-24': { problems: 1, reviews: 2 },
-    '2024-06-25': { problems: 2, reviews: 0 }
-  };
+  // No data initially
+  const studyData = {};
 
   const getDaysInMonth = (date: Date) => {
     const year = date.getFullYear();
@@ -45,16 +38,8 @@ const Calendar = () => {
   const getActivityLevel = (day: number) => {
     if (!day) return '';
     
-    const dateStr = `2024-06-${day.toString().padStart(2, '0')}`;
-    const data = studyData[dateStr as keyof typeof studyData];
-    
-    if (!data) return 'bg-gray-100';
-    
-    const total = data.problems + data.reviews;
-    if (total === 0) return 'bg-gray-100';
-    if (total <= 2) return 'bg-cyan-200';
-    if (total <= 4) return 'bg-cyan-400';
-    return 'bg-cyan-600';
+    // No data, so all days are inactive
+    return 'bg-gray-100';
   };
 
   const days = getDaysInMonth(selectedDate);
@@ -140,17 +125,17 @@ const Calendar = () => {
           <CardContent>
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center p-4 bg-primary/5">
-                <div className="text-2xl font-bold text-primary">9</div>
+                <div className="text-2xl font-bold text-primary">0</div>
                 <div className="text-sm text-primary/70">Problems Added</div>
               </div>
               <div className="text-center p-4 bg-primary/5">
-                <div className="text-2xl font-bold text-primary">12</div>
+                <div className="text-2xl font-bold text-primary">0</div>
                 <div className="text-sm text-primary/70">Reviews Done</div>
               </div>
             </div>
             
             <div className="mt-4 text-center p-4 bg-primary/5">
-              <div className="text-2xl font-bold text-primary">85%</div>
+              <div className="text-2xl font-bold text-primary">-</div>
               <div className="text-sm text-primary/70">Success Rate</div>
             </div>
           </CardContent>
@@ -162,22 +147,8 @@ const Calendar = () => {
             <CardTitle className="text-primary">Upcoming Reviews</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center p-3 bg-yellow-50">
-                <div>
-                  <div className="font-medium text-yellow-800">Tomorrow</div>
-                  <div className="text-sm text-yellow-600">2 problems due</div>
-                </div>
-                <div className="w-2 h-2 bg-yellow-500"></div>
-              </div>
-              
-              <div className="flex justify-between items-center p-3 bg-orange-50">
-                <div>
-                  <div className="font-medium text-orange-800">In 3 days</div>
-                  <div className="text-sm text-orange-600">1 problem due</div>
-                </div>
-                <div className="w-2 h-2 bg-orange-500"></div>
-              </div>
+            <div className="text-center text-primary/60 py-8">
+              No upcoming reviews scheduled
             </div>
           </CardContent>
         </Card>
